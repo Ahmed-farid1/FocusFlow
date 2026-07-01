@@ -1,0 +1,544 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-text: #2c3e50;
+  --color-text-light: #5a6a7a;
+  --color-primary: #4a7c9b;
+  --color-primary-dark: #3a6580;
+  --color-border: #dde3ea;
+  --color-accent: #e8f0f5;
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-dyslexic: "OpenDyslexic", "Segoe UI", sans-serif;
+  --reading-font-size: 18px;
+  --reading-line-height: 1.8;
+  --dyslexia-letter-spacing: 0.06em;
+  --dyslexia-word-spacing: 0.15em;
+  --radius: 8px;
+  --spacing: 1rem;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.85rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.header-label {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--color-accent);
+  color: var(--color-text);
+  transition: background 0.15s;
+}
+
+.btn:hover {
+  background: var(--color-border);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-small {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* ===== Landing Page ===== */
+.hero {
+  padding: 3.5rem 0 3rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.hero-text {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+}
+
+.section {
+  padding: 2.5rem 0;
+}
+
+.section-alt {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: var(--color-text-light);
+  margin-bottom: 0.75rem;
+  max-width: 700px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.feature-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.cta-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.cta-section p {
+  margin: 0 auto 1.25rem;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 1.25rem 0;
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+}
+
+/* ===== Workspace Layout ===== */
+.workspace-main {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  min-height: calc(100vh - 120px);
+}
+
+.workspace-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Settings panel */
+.settings-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  height: fit-content;
+  position: sticky;
+  top: 1rem;
+}
+
+.settings-panel h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.setting-group {
+  margin-bottom: 1.25rem;
+}
+
+.setting-group h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-light);
+  margin-bottom: 0.6rem;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.toggle-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Simple toggle switch for dyslexia mode */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: var(--color-border);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.15s;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background: var(--color-primary);
+}
+
+.toggle-switch input:focus-visible + .toggle-slider {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(20px);
+}
+
+.dyslexia-hint {
+  margin-top: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.dyslexia-controls {
+  padding-top: 0.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.control-label {
+  font-size: 0.9rem;
+}
+
+.stepper-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stepper-controls span {
+  font-size: 0.9rem;
+  min-width: 44px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-size-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.font-size-controls span {
+  font-size: 0.9rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-top: 0.4rem;
+}
+
+.timer-display {
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Panels */
+.panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.panel h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.input-panel textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+  margin-bottom: 0.75rem;
+}
+
+.input-panel textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+/* Reading output area */
+.reading-output {
+  min-height: 200px;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  font-size: var(--reading-font-size, 18px);
+  line-height: var(--reading-line-height, 1.8);
+  font-family: var(--font-main);
+  color: var(--color-text);
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.reading-output .placeholder-text {
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.reading-output .reading-paragraph {
+  margin-bottom: 1.1em;
+}
+
+.reading-output .reading-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Bionic reading — bold first part of words */
+.reading-output .bionic-bold {
+  font-weight: 700;
+}
+
+.reading-output .bionic-normal {
+  font-weight: 400;
+}
+
+/*
+  Dyslexia-friendly reading mode
+  - OpenDyslexic: bottom-weighted, rounded letters (b/d, p/q, n/u stay distinct)
+  - Wider tracking so eyes move line-by-line more easily
+  - Soft background and strong contrast for long sessions
+*/
+.reading-output.dyslexia-mode {
+  font-family: var(--font-dyslexic);
+  font-weight: 400;
+  font-size: var(--reading-font-size, 20px);
+  line-height: var(--reading-line-height, 1.9);
+  letter-spacing: var(--dyslexia-letter-spacing, 0.06em);
+  word-spacing: var(--dyslexia-word-spacing, 0.15em);
+  color: #1a2d3d;
+  background-color: #faf8f5;
+  padding: 1.5rem 1.75rem;
+  max-width: 68ch;
+  border-color: #e5e0d8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: none;
+  hyphens: none;
+}
+
+.reading-output.dyslexia-mode .reading-paragraph {
+  margin-bottom: 1.35em;
+}
+
+/* Use OpenDyslexic Bold for bionic emphasis — no thin decorative strokes */
+.reading-output.dyslexia-mode .bionic-bold {
+  font-weight: 700;
+}
+
+.reading-output.dyslexia-mode .bionic-normal {
+  font-weight: 400;
+}
+
+/* Focus mode — applied to whole workspace */
+body.focus-mode .settings-panel {
+  /* Keep settings visible but simpler */
+  opacity: 0.95;
+}
+
+body.focus-mode .input-panel {
+  display: none;
+}
+
+body.focus-mode .workspace-footer {
+  display: none;
+}
+
+body.focus-mode .reading-output {
+  font-size: calc(var(--reading-font-size, 18px) + 2px);
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+body.focus-mode .reading-output.dyslexia-mode {
+  line-height: calc(var(--reading-line-height, 1.9) + 0.1);
+  padding: 2.25rem 2rem;
+  max-width: 68ch;
+}
+
+body.focus-mode .output-panel {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.focus-mode .output-panel h2 {
+  text-align: center;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+body.focus-mode .workspace-content {
+  justify-content: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .workspace-main {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-panel {
+    position: static;
+  }
+
+  .reading-output.dyslexia-mode {
+    padding: 1.25rem 1.1rem;
+    letter-spacing: 0.05em;
+    word-spacing: 0.12em;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+}
+

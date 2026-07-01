@@ -1,0 +1,44 @@
+/* OpenDyslexic Font */
+
+@font-face {
+  font-family: "OpenDyslexic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.0.0/files/opendyslexic-latin-400-normal.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.0.0/files/opendyslexic-latin-700-normal.woff2")
+    format("woff2");
+}
+
+/* Dyslexia Reading Mode */
+
+.dyslexia-mode {
+  font-family: "OpenDyslexic", Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  word-spacing: 0.15em;
+  max-width: 65ch;
+  color: #222;
+}
+
+/* Optional: Improve readability further */
+
+.dyslexia-mode p {
+  margin-bottom: 1.5rem;
+}
+
+.dyslexia-mode h1,
+.dyslexia-mode h2,
+.dyslexia-mode h3 {
+  font-family: "OpenDyslexic", Arial, sans-serif;
+  line-height: 1.6;
+}

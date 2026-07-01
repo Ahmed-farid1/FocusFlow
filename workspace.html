@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workspace — FocusFlow</title>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    
+  </head>
+  <body class="workspace-page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">FocusFlow</a>
+        <span class="header-label">Workspace</span>
+      </div>
+    </header>
+
+    <main class="workspace-main container">
+      <!-- Settings panel -->
+      <aside class="settings-panel" id="settingsPanel">
+        <h2>Settings</h2>
+
+        <!-- Reading modes -->
+        <div class="setting-group">
+          <h3>Reading Modes</h3>
+
+          <label class="toggle-row">
+            <span>Bionic Reading</span>
+            <input type="checkbox" id="bionicToggle" />
+          </label>
+
+          <label class="toggle-row">
+            <span>Focus Mode</span>
+            <input type="checkbox" id="focusToggle" />
+          </label>
+        </div>
+        
+
+        <!-- Dyslexia-friendly reading -->
+        <div class="setting-group dyslexia-settings">
+          <h3>Dyslexia-Friendly Reading</h3>
+
+          <label class="toggle-row" for="dyslexiaToggle">
+            <span>Dyslexia Mode</span>
+            <span class="toggle-switch">
+              <input
+                type="checkbox"
+                id="dyslexiaToggle"
+                aria-label="Toggle dyslexia-friendly reading mode"
+              />
+              <span class="toggle-slider"></span>
+            </span>
+          </label>
+
+          <p class="hint dyslexia-hint">
+            OpenDyslexic font with wider letter, word, and line spacing.
+          </p>
+
+          <div class="dyslexia-controls">
+            <div class="control-row">
+              <span class="control-label">Font Size</span>
+              <div class="stepper-controls">
+                <button
+                  type="button"
+                  class="btn btn-small"
+                  id="fontDecrease"
+                  aria-label="Decrease font size"
+                >
+                  A−
+                </button>
+                <span id="fontSizeLabel">20px</span>
+                <button
+                  type="button"
+                  class="btn btn-small"
+                  id="fontIncrease"
+                  aria-label="Increase font size"
+                >
+                  A+
+                </button>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <span class="control-label">Line Spacing</span>
+              <div class="stepper-controls">
+                <button
+                  type="button"
+                  class="btn btn-small"
+                  id="lineDecrease"
+                  aria-label="Decrease line spacing"
+                >
+                  −
+                </button>
+                <span id="lineSpacingLabel">1.9</span>
+                <button
+                  type="button"
+                  class="btn btn-small"
+                  id="lineIncrease"
+                  aria-label="Increase line spacing"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text-to-speech -->
+        <div class="setting-group">
+          <h3>Text-to-Speech</h3>
+          <div class="button-row">
+            <button type="button" class="btn btn-small" id="ttsPlay">
+              Play
+            </button>
+            <button type="button" class="btn btn-small" id="ttsPause">
+              Pause
+            </button>
+            <button type="button" class="btn btn-small" id="ttsStop">
+              Stop
+            </button>
+          </div>
+          <p class="hint" id="ttsStatus">Ready</p>
+        </div>
+
+        <!-- Pomodoro timer -->
+        <div class="setting-group">
+          <h3>Pomodoro Timer</h3>
+          <p class="timer-display" id="timerDisplay">25:00</p>
+          <div class="button-row">
+            <button type="button" class="btn btn-small" id="timerStart">
+              Start
+            </button>
+            <button type="button" class="btn btn-small" id="timerPause">
+              Pause
+            </button>
+            <button type="button" class="btn btn-small" id="timerReset">
+              Reset
+            </button>
+          </div>
+          <p class="hint">25-minute focus session</p>
+        </div>
+      </aside>
+
+      <!-- Main content area -->
+      <div class="workspace-content">
+        <!-- Text input -->
+        <section class="panel input-panel">
+          <label for="textInput">
+            <h2>Paste Your Text</h2>
+          </label>
+          <textarea
+            id="textInput"
+            placeholder="Paste your homework, article, or notes here..."
+            rows="8"
+          ></textarea>
+          <button type="button" class="btn btn-primary" id="applyText">
+            Show Text
+          </button>
+        </section>
+
+        <!-- Reading output -->
+        <section class="panel output-panel">
+          <h2>Reading View</h2>
+          <div id="readingOutput" class="reading-output" aria-live="polite">
+            <p class="placeholder-text">
+              Your formatted text will appear here.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer workspace-footer">
+      <div class="container">
+        <p>FocusFlow — Student Hackathon Project</p>
+      </div>
+    </footer>
+
+    <script src="js/workspace.js"></script>
+  </body>
+</html>
