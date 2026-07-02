@@ -332,33 +332,3 @@ timerReset.addEventListener("click", resetTimer);
 // Set initial display
 updateTimerDisplay();
 applyReadingStyles();
-applyLanguage();
-
-function applyLanguage() {
-  const lang = languageSelect.value;
-
-  document.documentElement.lang = lang;
-
-  if (lang === "ar") {
-    document.documentElement.dir = "rtl";
-
-    textInput.placeholder = "اكتب أو الصق النص هنا...";
-    applyTextBtn.textContent = "تطبيق النص";
-
-    ttsStatus.textContent = "جاهز";
-
-    document.body.classList.add("arabic-mode");
-  } else {
-    document.documentElement.dir = "ltr";
-
-    textInput.placeholder = "Paste or type text here...";
-    applyTextBtn.textContent = "Apply Text";
-
-    ttsStatus.textContent = "Ready";
-
-    document.body.classList.remove("arabic-mode");
-  }
-}
-
-languageSelect.addEventListener("change", applyLanguage);
-
